@@ -1,0 +1,118 @@
+{
+  "project_info": {
+    "project_number": "254382477367",
+    "project_id": "buuble-3aae3",
+    "storage_bucket": "buuble-3aae3.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254382477367:android:a9b6cb9c7ad6de56aa6fb2",
+        "android_client_info": {
+          "package_name": "com.example.bubbles"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiMAsczmpsaGixTzicbvM_x070Kvor2Zs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "254382477367-5qbq6f1keepojob688c5f37lc2dugqdd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zerochat"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254382477367:android:5bfe3efde33e4b2eaa6fb2",
+        "android_client_info": {
+          "package_name": "com.example.zerochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiMAsczmpsaGixTzicbvM_x070Kvor2Zs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "254382477367-5qbq6f1keepojob688c5f37lc2dugqdd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zerochat"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:254382477367:android:475b9344921e1811aa6fb2",
+        "android_client_info": {
+          "package_name": "com.towea.arcdev18.zerochat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiMAsczmpsaGixTzicbvM_x070Kvor2Zs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "254382477367-5qbq6f1keepojob688c5f37lc2dugqdd.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.zerochat"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
