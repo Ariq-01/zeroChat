@@ -6,5 +6,5 @@ abstract class AuthRepository {
  
     Future<Void> SignOut();
     Future<void> SignInWithGoogle();
-    Stream<UserAuth> get user,
+    Stream<UserAuth> get UserAuth,
   }
