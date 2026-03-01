@@ -5,36 +5,35 @@ import '../../domain/repositories/auth_repository.dart';
 
 class FirebaseAuthRepositoryImpl implements AuthRepository {
   final fb.FirebaseAuth _firebaseAuth;
-  final GoogleSignIn _googleSignIn;
 
-  FirebaseAuthRepositoryImpl(this._firebaseAuth, this._googleSignIn);
+  FirebaseAuthRepositoryImpl(this._firebaseAuth);
 
   @override
   Stream<AppUser?> get user => _firebaseAuth.authStateChanges().map((fbUser) {
-        if (fbUser == null) return null;
-        return AppUser(
-          id: fbUser.uid,
-          email: fbUser.email,
-          displayName: fbUser.displayName,
-          photoUrl: fbUser.photoURL,
-        );
-      });
+    if (fbUser == null) return null;
+    return AppUser(
+      id: fbUser.uid,
+      email: fbUser.email,
+      displayName: fbUser.displayName,
+      photoUrl: fbUser.photoURL,
+    );
+  });
 
   @override
   Future<void> SignInWithGoogle() async {
     try {
-      // FIX #1: = bukan ==
-      final GoogleSignInAccount? googleUser = await _googleSignIn.signIn();
+      // google_sign_in v7: gunakan GoogleSignIn.instance.authenticate()
+      final GoogleSignInAccount googleUser =
+          await GoogleSignIn.instance.authenticate();
 
-      if (googleUser == null) return;
+      final GoogleSignInAuthentication googleAuth = googleUser.authentication;
 
-      final GoogleSignInAuthentication googleAuth =
-          await googleUser.authentication;
+      // accessToken kini ada di authorizationClient (google_sign_in v7)
+      final GoogleSignInClientAuthorization? authorization =
+          await googleUser.authorizationClient.authorizationForScopes([]);
 
-      // FIX #2: GoogleAuthProvider bukan GoogleAuthprovider
-      // FIX #3: nama variabel konsisten → credential
       final fb.AuthCredential credential = fb.GoogleAuthProvider.credential(
-        accessToken: googleAuth.accessToken,
+        accessToken: authorization?.accessToken,
         idToken: googleAuth.idToken,
       );
 
@@ -45,13 +44,9 @@ class FirebaseAuthRepositoryImpl implements AuthRepository {
   }
 
   @override
-  // FIX #5: sign out dari Google juga agar account picker muncul kembali
+  // sign out dari Google juga agar account picker muncul kembali
   Future<void> SignOut() async {
-    await _googleSignIn.signOut();
+    await GoogleSignIn.instance.signOut();
     await _firebaseAuth.signOut();
   }
-
-
-
-
 }

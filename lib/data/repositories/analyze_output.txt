@@ -1,0 +1,10 @@
+Analyzing firebase_auth_repository_impl.dart...
+
+  error - firebase_auth_repository_impl.dart:6:7 - Missing concrete implementation of 'AuthRepository.SignOut'. Try implementing the missing method, or make the class abstract. - non_abstract_class_inherits_abstract_member
+  error - firebase_auth_repository_impl.dart:27:67 - The method 'signIn' isn't defined for the type 'GoogleSignIn'. Try correcting the name to the name of an existing method, or defining a method named 'signIn'. - undefined_method
+  error - firebase_auth_repository_impl.dart:37:33 - The getter 'accessToken' isn't defined for the type 'GoogleSignInAuthentication'. Try importing the library that defines 'accessToken', correcting the name to the name of an existing getter, or defining a getter or field named 'accessToken'. - undefined_getter
+warning - firebase_auth_repository_impl.dart:49:16 - The method doesn't override an inherited method. Try updating this class to match the superclass, or removing the override annotation. - override_on_non_overriding_member
+   info - firebase_auth_repository_impl.dart:24:16 - The variable name 'SignInWithGoogle' isn't a lowerCamelCase identifier. Try changing the name to follow the lowerCamelCase style. - non_constant_identifier_names
+   info - firebase_auth_repository_impl.dart:32:11 - Uses 'await' on an instance of 'GoogleSignInAuthentication', which is not a subtype of 'Future'. Try removing the 'await' or changing the expression. - await_only_futures
+
+6 issues found.

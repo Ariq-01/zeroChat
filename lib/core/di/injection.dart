@@ -11,15 +11,17 @@ final sl = GetIt.instance;
 Future<void> init() async {
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
+  // google_sign_in v7: pakai singleton instance dan initialize()
+  await GoogleSignIn.instance.initialize(
+    serverClientId:
+        '254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com',
+  );
+
   // External dependencies
   sl.registerLazySingleton(() => FirebaseAuth.instance);
-  sl.registerLazySingleton(() => GoogleSignIn(
-        serverClientId:
-            '254382477367-vak62vu0hbqpg4vciq0q0hcduqh2gt00.apps.googleusercontent.com',
-      ));
 
   // Repository
   sl.registerLazySingleton<AuthRepository>(
-    () => FirebaseAuthRepositoryImpl(sl(), sl()),
+    () => FirebaseAuthRepositoryImpl(sl()),
   );
 }
